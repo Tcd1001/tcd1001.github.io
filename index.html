@@ -16,25 +16,24 @@
 <body>
     <div class = "container">
         <h2>Select a Major</h2>
-        <input type = "button" id = "btn" value = "CIT Majors" onclick="getData('CIT')">
-        <input type = "button" id = "btn" value = "Business Majors" onclick="getData('BUS')">
+        <input type = "button" value = "CIT Majors" onclick="getData('CIT')">
+        <input type = "button" value = "Business Majors" onclick="getData('BUS')">
     
         <div id = "majorTable"></div>
     </div>
 </body>
-
-</div>
 
 <script type="text/x-handlebars-template" id="MajorTemplate">
     <table class="table table-striped">
         <tr><th>Name</th><th>Major</th><th>Midterm</th><th>Final</th></tr>
        {{#each rows}}
             <tr>
-                <td>{{name}}</td><td>{{meal}}</td><td>{{category}}</td><td>{{portion}}</td>
+                <td>{{name}}</td><td>{{major}}</td><td>{{midterm}}</td><td>{{final}}</td>
             </tr>
         {{/each}}
         </table>
 </script>
+
 <script>
     async function getData(selected_major) {
         var response = await fetch('cit5students.json');
